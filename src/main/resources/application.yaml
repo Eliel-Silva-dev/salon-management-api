@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: salon-management-api
+
+logging:
+  level:
+    root: INFO
+    com.hydrahtec.salon_management_api: INFO
