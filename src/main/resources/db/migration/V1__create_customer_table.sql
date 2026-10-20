@@ -1,0 +1,5 @@
+CREATE TABLE customer (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(30)
+);
