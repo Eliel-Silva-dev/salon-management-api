@@ -2,6 +2,7 @@ package com.hydrahtec.salon_management_api.services;
 
 import com.hydrahtec.salon_management_api.entity.Customer;
 import com.hydrahtec.salon_management_api.exception.CustomerNotFoundException;
+import com.hydrahtec.salon_management_api.exception.DuplicatePhoneNumberException;
 import com.hydrahtec.salon_management_api.repositories.CustomerRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,6 +23,10 @@ public class CustomerService {
 
     @Transactional
     public Customer create(String name, String phoneNumber) {
+        if (CUSTOMERREPOSITORY.existsByPhoneNumber(phoneNumber)) {
+            throw new DuplicatePhoneNumberException();
+        }
+
         Customer saved = CUSTOMERREPOSITORY.save(new Customer(name, phoneNumber));
         log.info("Customer create with id {}", saved.getId());
         return saved;
