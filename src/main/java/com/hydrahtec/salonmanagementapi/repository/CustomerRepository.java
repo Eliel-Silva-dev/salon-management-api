@@ -1,4 +1,4 @@
-package com.hydrahtec.salonmanagementapi.repositories;
+package com.hydrahtec.salonmanagementapi.repository;
 
 
 import com.hydrahtec.salonmanagementapi.entity.Customer;

@@ -1,9 +1,9 @@
-package com.hydrahtec.salonmanagementapi.controllers;
+package com.hydrahtec.salonmanagementapi.controller;
 
 import com.hydrahtec.salonmanagementapi.dto.CreateCustomerRequest;
 import com.hydrahtec.salonmanagementapi.dto.CustomerResponse;
 import com.hydrahtec.salonmanagementapi.entity.Customer;
-import com.hydrahtec.salonmanagementapi.services.CustomerService;
+import com.hydrahtec.salonmanagementapi.service.CustomerService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
