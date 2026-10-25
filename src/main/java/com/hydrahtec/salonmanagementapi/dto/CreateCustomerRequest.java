@@ -1,4 +1,4 @@
-package com.hydrahtec.salon_management_api.dto;
+package com.hydrahtec.salonmanagementapi.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

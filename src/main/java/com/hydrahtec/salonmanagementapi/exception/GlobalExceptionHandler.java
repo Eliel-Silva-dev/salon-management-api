@@ -1,4 +1,4 @@
-package com.hydrahtec.salon_management_api.exception;
+package com.hydrahtec.salonmanagementapi.exception;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

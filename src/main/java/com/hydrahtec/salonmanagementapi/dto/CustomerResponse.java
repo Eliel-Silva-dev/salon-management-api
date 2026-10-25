@@ -1,6 +1,6 @@
-package com.hydrahtec.salon_management_api.dto;
+package com.hydrahtec.salonmanagementapi.dto;
 
-import com.hydrahtec.salon_management_api.entity.Customer;
+import com.hydrahtec.salonmanagementapi.entity.Customer;
 
 public record CustomerResponse(
         Long id, String name, String phoneNumber

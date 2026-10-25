@@ -1,4 +1,4 @@
-package com.hydrahtec.salon_management_api.exception;
+package com.hydrahtec.salonmanagementapi.exception;
 
 public class CustomerNotFoundException extends RuntimeException {
 

@@ -1,4 +1,4 @@
-package com.hydrahtec.salon_management_api.entity;
+package com.hydrahtec.salonmanagementapi.entity;
 
 import jakarta.persistence.*;
 

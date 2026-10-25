@@ -1,9 +1,9 @@
-package com.hydrahtec.salon_management_api.services;
+package com.hydrahtec.salonmanagementapi.services;
 
-import com.hydrahtec.salon_management_api.entity.Customer;
-import com.hydrahtec.salon_management_api.exception.CustomerNotFoundException;
-import com.hydrahtec.salon_management_api.exception.DuplicatePhoneNumberException;
-import com.hydrahtec.salon_management_api.repositories.CustomerRepository;
+import com.hydrahtec.salonmanagementapi.entity.Customer;
+import com.hydrahtec.salonmanagementapi.exception.CustomerNotFoundException;
+import com.hydrahtec.salonmanagementapi.exception.DuplicatePhoneNumberException;
+import com.hydrahtec.salonmanagementapi.repositories.CustomerRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;

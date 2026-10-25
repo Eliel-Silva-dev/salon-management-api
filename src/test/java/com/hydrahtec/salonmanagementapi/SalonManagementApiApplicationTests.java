@@ -1,4 +1,4 @@
-package com.hydrahtec.salon_management_api;
+package com.hydrahtec.salonmanagementapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

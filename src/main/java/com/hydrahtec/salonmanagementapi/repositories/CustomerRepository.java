@@ -1,7 +1,7 @@
-package com.hydrahtec.salon_management_api.repositories;
+package com.hydrahtec.salonmanagementapi.repositories;
 
 
-import com.hydrahtec.salon_management_api.entity.Customer;
+import com.hydrahtec.salonmanagementapi.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
