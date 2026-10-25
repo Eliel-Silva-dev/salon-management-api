@@ -1,8 +1,22 @@
 spring:
   application:
     name: salon-management-api
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
 
 logging:
   level:
     root: INFO
-    com.hydrahtec.salon_management_api: INFO
+    com.hydrahtec.salonmanagementapi: INFO
