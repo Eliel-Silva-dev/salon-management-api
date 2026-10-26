@@ -6,10 +6,10 @@ import com.hydrahtec.salonmanagementapi.exception.DuplicatePhoneNumberException;
 import com.hydrahtec.salonmanagementapi.repository.CustomerRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Service
 public class CustomerService {
@@ -39,7 +39,7 @@ public class CustomerService {
     }
 
     @Transactional(readOnly = true)
-    public List<Customer> findAll() {
-        return CUSTOMERREPOSITORY.findAll();
+    public Page<Customer> findAll(Pageable pageable) {
+        return CUSTOMERREPOSITORY.findAll(pageable);
     }
 }
