@@ -5,12 +5,14 @@ import com.hydrahtec.salonmanagementapi.dto.CustomerResponse;
 import com.hydrahtec.salonmanagementapi.entity.Customer;
 import com.hydrahtec.salonmanagementapi.service.CustomerService;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
+import org.springframework.data.web.PagedModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
-import java.util.List;
 
 @RestController
 @RequestMapping("/customers")
@@ -38,10 +40,10 @@ public class CustomerController {
     }
 
     @GetMapping
-    public List<CustomerResponse> findAll() {
-        return CUSTOMERSERVICE.findAll().stream()
-                .map(CustomerResponse::from)
-                .toList();
+    public PagedModel<CustomerResponse> findAll(
+            @PageableDefault(size = 20, sort = {"name", "id"}) Pageable pageable
+    ) {
+        return new PagedModel<>(CUSTOMERSERVICE.findAll(pageable).map(CustomerResponse::from));
     }
 
 }

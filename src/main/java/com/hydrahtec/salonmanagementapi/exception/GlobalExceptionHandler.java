@@ -3,6 +3,7 @@ package com.hydrahtec.salonmanagementapi.exception;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.core.PropertyReferenceException;
 import org.springframework.http.*;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -73,5 +74,12 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return handleExceptionInternal(ex, problem, headers, HttpStatus.BAD_REQUEST, request);
     }
 
-
+    @ExceptionHandler(PropertyReferenceException.class)
+    public ProblemDetail handleInvalidProperty(PropertyReferenceException ex) {
+        log.warn("Request reject: invalid sort property");
+        ProblemDetail problem = ProblemDetail.forStatusAndDetail(
+                HttpStatus.BAD_REQUEST, "One of the requested sort properties does not exist");
+        problem.setTitle("Invalid sort property");
+        return problem;
+    }
 }
